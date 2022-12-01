@@ -105,16 +105,26 @@
 
 
 # <editor-fold desc="Arithemic operators">
-
-num1 = 6
-num2 = 4
-
-print(num1 + num2)
-print(num1 - num2)
-print(num1 * num2)
-print(num1 / num2)
-print(num1 % num2)
-print(num1 // num2)
-print(num1 ** num2)
+#
+# num1 = 6
+# num2 = 4
+#
+# print(num1 + num2)
+# print(num1 - num2)
+# print(num1 * num2)
+# print(num1 / num2)      # 1.5
+# print(num1 % num2)      # деление с остатком
+# print(num1 // num2)     # целая часть от деления
+# print(num1 ** num2)
 
 # </editor-fold>
+
+
+# num1, num2 = int(input()), int(input())
+
+# n1 = 1
+# n2 = 2
+#
+# n1, n2 = n2, n1
+
+
