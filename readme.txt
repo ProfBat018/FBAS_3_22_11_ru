@@ -3,3 +3,10 @@ mystat.itstep.org - ваш дневник.
 https://www.youtube.com/watch?v=tsbRJc3IGzY&t=1s - ссылка на стрим 
 https://www.python.org/downloads/ - ссылка на интерпретатор. 
 https://www.jetbrains.com/pycharm/download/#section=windows - ссылка на Pycharm. 
+
+Список пройденных уроков: 
+1. Введение в пайтон.
+2. Переменные и Типы данных
+3. Операторы
+4. Условия 
+5. Цикл while
