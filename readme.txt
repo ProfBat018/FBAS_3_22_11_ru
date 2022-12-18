@@ -1,8 +1,12 @@
-https://app.diagrams.net/ - сайт для алгоритмов. 
-mystat.itstep.org - ваш дневник. 
-https://www.youtube.com/watch?v=tsbRJc3IGzY&t=1s - ссылка на стрим 
-https://www.python.org/downloads/ - ссылка на интерпретатор. 
-https://www.jetbrains.com/pycharm/download/#section=windows - ссылка на Pycharm. 
+Python
+ _____________________________________________________________________________________________
+|															    |
+| https://app.diagrams.net/ - сайт для алгоритмов. 							    |
+| mystat.itstep.org - ваш дневник. 										    |
+| https://www.youtube.com/watch?v=tsbRJc3IGzY&t=1s - ссылка на стрим 				    |
+| https://www.python.org/downloads/ - ссылка на интерпретатор. 					    |
+| https://www.jetbrains.com/pycharm/download/#section=windows - ссылка на Pycharm. 		    |
+|_____________________________________________________________________________________________|
 
 Список пройденных уроков: 
 1. Введение в пайтон.
