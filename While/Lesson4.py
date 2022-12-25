@@ -94,21 +94,20 @@
 #
 # </editor-fold>
 
-number = int(input("Enter your number: "))  # 1234
-
-division = 1
-odd_sum = 0
-even_sum = 0
-
-while (number // division) > 0:
-    digit = (number // division) % 10
-    division *= 10
-    if digit % 2 == 0:
-        even_sum += digit
-    else:
-        odd_sum += digit
-
-
+# number = int(input("Enter your number: "))  # 1234
+#
+# division = 1
+# odd_sum = 0
+# even_sum = 0
+#
+# while (number // division) > 0:
+#     digit = (number // division) % 10
+#     division *= 10
+#     if digit % 2 == 0:
+#         even_sum += digit
+#     else:
+#         odd_sum += digit
+#
 
 
 
