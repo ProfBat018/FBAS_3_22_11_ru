@@ -30,7 +30,7 @@
 # #     i += 1
 #
 
-text = "Hello World?? How are you !?! Aloha! Hakuna Matata. Xelil:) ."
+text = "Hello World?? How are you !?! Aloha! Hakuna Matata. Xelil:) "
 operators = [".", "?", "!"]
 length = 0
 check = True
