@@ -27,8 +27,6 @@ import random
 
 
 # <editor-fold desc="Bubble Sort">
-
-
 def bubble_sort(nums: list):
     for i in range(len(nums)):
         for j in range(len(nums) - 1):
@@ -42,6 +40,8 @@ def bubble_sort(nums: list):
 nums = [random.randint(1, 10) for i in range(10)]
 
 print(bubble_sort(nums))
+
+
 
 # </editor-fold>
 
