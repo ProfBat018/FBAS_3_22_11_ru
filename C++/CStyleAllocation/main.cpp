@@ -2,6 +2,7 @@
 
 using namespace std;
 
+
 int main() {
 #pragma region Lesson1
 
@@ -79,6 +80,7 @@ int* arr = (int*)malloc(10 * sizeof(int));
 
 #pragma endregion
 #pragma endregion
+#pragma region Lesson2
 
 //    int *arr, *tmpArr;
 //    int length{}, newLength{};
@@ -124,12 +126,74 @@ int* arr = (int*)malloc(10 * sizeof(int));
 //    }
 //    cout << endl;
 
+#pragma endregion
+#pragma region Part3
+/*
+    // Создаю int массив из 5 элементов в Heap
+    int *arr1 = (int*) malloc(sizeof(int) * 5);
 
-int length{};
-cout << "Enter length: ";
-cin >> length;
+    // Создаю int массив из 5 элементов в Heap
+    int *arr2 = (int*) calloc(5, sizeof(int) * 5);
 
-int* arr = new int[length]{};
+    for (int i = 0; i < 5; ++i) {
+        cout << arr1[i] << ' ';
+    }
+
+    cout << endl;
+
+    for (int i = 0; i < 5; ++i) {
+        cout << arr2[i] << ' ';
+    }
+
+    */
+#pragma endregion
+#pragma region WhyWeNeedFree
+/*
+int num = 5;
+
+cout << "Before if" << endl;
+if (num) {
+    int* arr = (int*) calloc(5, sizeof(int) * 5);
+
+    for (int i = 0; i < 5; ++i) {
+        arr[i] = i + 1;
+    }
+
+    free(arr);
+}
+
+cout << "After if" << endl;
+
+#pragma endregion
+
+*/
+
+
+    int *arr1 = new int[5]{}; // calloc
+//int *arr2 = new int[5]; // malloc
+
+    for (int i = 0; i < 5; ++i) {
+        arr1[i] = i + 1;
+    }
+
+    cout << "Before deleting..." << endl;
+    for (int i = 0; i < 5; ++i) {
+        cout << arr1[i] << ' ';
+    }
+
+    delete[] arr1;
+
+
+    cout << "After deleting..." << endl;
+    for (int i = 0; i < 5; ++i) {
+        cout << arr1[i] << ' ';
+    }
+
+#pragma endregion
 
     return 0;
 }
+
+
+
+
