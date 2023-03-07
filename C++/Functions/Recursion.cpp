@@ -11,6 +11,9 @@ int fact(int num) {
 int main() {
     int res = fact(5);
     cout << res;
+
+    cout << "Kanye West is white"
 }
+
 
 
