@@ -13,8 +13,17 @@ using namespace std;
 //}
 
 
+int sum(int number) {
+    if(number == 0) {
+        return 0 ;
+    }
+    return number + sum(number - 1);
+}
+
+
 int main()
 {
+    cout << sum(5);
 
 //    foo(); // Вызов функции
 
