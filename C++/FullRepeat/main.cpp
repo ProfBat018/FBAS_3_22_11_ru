@@ -38,7 +38,6 @@ cout << num3; // -(~(~N)+1) =>  -(N + 1)
 // number - находится в стэке, как и любая переменная
 // данные number - находятся в heap.
 
-
 #pragma region About_Pointers
 
 //    int *number = new int(10);
