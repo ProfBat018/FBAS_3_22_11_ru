@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ExternalLib.iml" filepath="$PROJECT_DIR$/.idea/ExternalLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/PointersToFunctions.iml" filepath="$PROJECT_DIR$/.idea/PointersToFunctions.iml" />
     </modules>
   </component>
 </project>
