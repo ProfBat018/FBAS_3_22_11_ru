@@ -7,6 +7,8 @@
 #Clion Files
 cmake-build-debug
 CMakeLists.txt
+.exe
+.obj
 
 
 # User-specific files
