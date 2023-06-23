@@ -16,7 +16,7 @@ public:
 
     }
 
-    Car(uint16_t year) {
+    explicit Car(uint16_t year) {
         this->make = "Mercedes";
         this->model = "C63 AMG";
         this->year = year;
@@ -55,10 +55,19 @@ int main()
      
     // Это тоже самое, что и предыдущая строка.
     // Но тут уже понятно, что мы создаем объект класса Car
-    print<Car>(Car()); // явно
+    // print<Car>(Car(2015)); // явно
 
-    print<Car>({2015});
+    // print<Car>(2015);
 
+    Car a(2015);
+    Car b("BMW", "M5", 2015);
+    Car b2 {"BMW", "M5", 2015};
+
+    b = a;
+    cout << b << endl;  
+
+    Car c(b);
+    cout << c << endl;
 
 
 
