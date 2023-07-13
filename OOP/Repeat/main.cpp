@@ -208,7 +208,7 @@ int main()
 #pragma endregion
 
 #pragma region Polymorphism
-
+/*
 #include <iostream>
 #include <cstdint>
 
@@ -263,5 +263,96 @@ int main () {
 
     return 0;
 }
-
+*/
 #pragma endregion
+
+#pragma region DataStrcturesRepeat
+/*
+#include <iostream>
+using namespace std;
+
+int main() {
+    int* arr = new int[] {1, 2, 3, 4, 5};
+
+    cout << arr;
+    cout << arr + 2;
+    cout << *(arr + 2);
+}
+*/
+#pragma endregion
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Student
+{
+
+public:
+    Student() = default;
+    string name;
+    int grade;
+    Student(string name,int grade)
+    {
+        this->name = name;
+        this->grade = grade;
+    }
+
+    bool operator ==(Student person) const
+    {
+        return this->grade == person.grade;
+    }
+
+    bool operator !=(Student person) const
+    {
+        return this->grade != person.grade;
+    }
+
+    bool operator > (Student person) const
+    {
+        return this->grade > person.grade;
+    }
+
+    bool operator < (Student person) const
+    {
+        return this->grade < person.grade;
+    }
+
+    friend ostream& operator<< (ostream& stream, Student person)
+    {
+        stream << "Value: ";
+        stream << person.name;
+        return stream;
+    }
+};
+
+class Classroom
+{
+public:
+    Student **students;
+    Classroom(Student **students)
+    {
+        this->students = students;
+    }
+
+    friend ostream& operator<< (ostream& stream, const Classroom& classroom)
+    {
+        stream << "Name: ";
+        for (int i = 0; i < 10; ++i)
+        {
+            stream << classroom.students[i] << endl;
+        }
+        return stream;
+    }
+};
+
+int main()
+{
+    Student* Person1 = new Student("Slavik",4);
+    Student* Person2 = new Student("Slavyan",3);
+
+    Student** persons = new Student*[]{Person1,Person2};
+
+    Classroom* classroom = new Classroom(persons);
+};
