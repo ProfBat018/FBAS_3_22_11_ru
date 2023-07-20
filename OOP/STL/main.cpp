@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <regex>
+#include "globals.h"
 
 using namespace std;
 
@@ -118,6 +120,11 @@ int main() {
     for (auto num : nums2) {
         cout << num << endl;
     }
+
+
+    string date = "12/12/2020";
+    bool check = regex_match(date, globals::date);
+
 
     return 0;
 }
