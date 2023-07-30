@@ -112,11 +112,13 @@ for (int i = 0; i < newNums->size(); i++) {
 #pragma endregion
 #pragma region PointersToFunctionExample
 
-//float salary = 2000.f;
-//float (*taxFuncs[])(float) = {tax1, tax2, tax3};
-//int taxCount = 3;
-//
-//cout << salary - countTaxes(salary, taxFuncs, taxCount) << endl;
+float salary = 2000.f;
+
+float (*taxFuncs[])(float) = {tax1, tax2, tax3};
+
+int taxCount = 3;
+
+cout << salary - countTaxes(salary, taxFuncs, taxCount) << endl;
 
 
 
