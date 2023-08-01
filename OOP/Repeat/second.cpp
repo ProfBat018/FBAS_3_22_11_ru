@@ -164,7 +164,7 @@ int main() {
 #pragma endregion
 
 #pragma region Virtual
-
+/*
 struct Transport {
     string make;
     string model;
@@ -188,8 +188,8 @@ public:
         cout << "Car moves" << endl;
     }
 };
-
-int main() {
+*/
+//int main() {
     /*
     Transport* t = new Transport();
     Car* c = new Car();
@@ -210,9 +210,9 @@ int main() {
     tc->Move(); // Car moves
     */
 
-    Transport* t1 = new Car();
+//    Transport* t1 = new Car();
 
-}
+//}
 #pragma endregion
 
 #pragma region Stack
@@ -260,5 +260,86 @@ public:
 // 1, 2, 3, 4, 5
 // peek - 2
 
+#pragma endregion
+
+#pragma region Friend
+/*
+class A {
+    private:
+    int a;
+    int b;
+    friend class B;
+public:
+   friend ostream& operator <<(ostream& os, A& a) {
+        os << a.a << " " << a.b;
+        return os;
+    }
+};
+
+class B {
+public:
+    int num;
+    void foo() {
+        A a;
+        a.a = 5;
+        a.b = 10;
+    }
+};
+
+ostream& operator <<(ostream& os, B& b) {
+    os << b.num;
+    return os;
+}
+
+
+int main() {
+
+    A a;
+
+    cout << a;
+
+    return 0;
+}
+ */
+#pragma endregion
+
+#pragma region AggregationAndComposition
+
+// Aggregation - это когда один объект содержит в себе другой объект
+// Composition - это когда один объект является частью другого объекта
+
+class Engine {
+public:
+    Engine(int n) {}
+private:
+    int num;
+};
+
+// Aggregation
+class Car {
+public:
+    Engine* engine;
+
+    Car() = default;
+    Car(Engine* engine) {
+        this->engine = engine; // composition
+    }
+};
+
+
+// Composition
+/*
+class Car {
+public:
+    Engine* engine;
+    Car(Engine* engine) {
+        this->engine = engine; // composition
+    }
+
+    ~Car() {
+        delete this->engine;
+    }
+};
+*/
 #pragma endregion
 
