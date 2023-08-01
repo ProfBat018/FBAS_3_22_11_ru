@@ -165,6 +165,54 @@ int main() {
 
 #pragma region Virtual
 
+struct Transport {
+    string make;
+    string model;
+
+    virtual void Move() {
+        cout << "Transport moves" << endl;
+    }
+
+    virtual void Move2() = 0;
+};
+
+class Car : public Transport {
+public:
+    string color;
+
+    void Move() override {
+        cout << "Car moves" << endl;
+    }
+
+    void Move2() override {
+        cout << "Car moves" << endl;
+    }
+};
+
+int main() {
+    /*
+    Transport* t = new Transport();
+    Car* c = new Car();
+    Transport* tc = new Car();
+
+    t->Move();  // Transport moves
+    c->Move();  // Car moves
+    tc->Move(); // Transport moves
+    */
+
+    /*
+    Transport* t = new Transport();
+    Car* c = new Car();
+    Transport* tc = new Car();
+
+    t->Move();  // Transport moves
+    c->Move();  // Car moves
+    tc->Move(); // Car moves
+    */
+
+    Transport* t1 = new Car();
+
+}
 #pragma endregion
 
 #pragma region Stack
@@ -213,3 +261,4 @@ public:
 // peek - 2
 
 #pragma endregion
+
