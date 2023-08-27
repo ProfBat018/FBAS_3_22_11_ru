@@ -95,3 +95,10 @@ var - это анонимный тип данных.
 ## Свойства
 
 Свойства - это поля с аксессорами. 
+
+## Strings
+[Методы строк](https://www.completecsharptutorial.com/csharp-articles/csharp-string-function.php)
+
+
+## StringBuilder
+
