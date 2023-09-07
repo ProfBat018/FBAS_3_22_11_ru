@@ -74,3 +74,58 @@
 
 #endregion
 
+#region Nullable
+
+// string? name = Console.ReadLine();
+//
+// if (name != null)
+// {
+//     Console.WriteLine(name);
+// }
+
+
+// string? name = null;
+// string name2 = name ?? "default name";
+// name ??= "default name";
+
+
+// string foo(string? name)
+// {
+    // return name ?? "default name";
+// }
+
+
+// string? name = null;
+// if (name != null)
+// {
+    // Console.WriteLine(name.Length);
+// }
+
+// Console.WriteLine(name?.Length);
+
+
+/*
+Person p1 = new() { Name = "Alex", Age = 20 };
+
+// GetMethods - Рефлексия
+foreach (var method in p1.GetType().GetMethods())
+{
+    Console.WriteLine(method.Name);
+}
+
+Person? p2 = null;
+
+Console.WriteLine(p2?.GetType().GetMethod("ToString")?.Invoke(p2, null));
+
+
+class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public override string ToString() => $"Name: {Name}\tAge: {Age}";
+}
+*/
+
+#endregion
+
+
