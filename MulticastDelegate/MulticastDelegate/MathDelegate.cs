@@ -1,0 +1,1 @@
+﻿public delegate float MathDelegate(int num1, int num2);
