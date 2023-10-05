@@ -80,24 +80,24 @@ formatter.Serialize(fs, users);
 
 #region XMLSerialization
 
-// using System.Net;
-// using System.Text;
-// using System.Xml;
-// using System.Xml.Serialization;
-// using SerializationRepeat;
-//
-// WebClient client = new();
-// string xmlRes = client.DownloadString("https://www.cbar.az/currencies/22.09.2023.xml");
-//
-// XmlSerializer serializer = new(typeof(ValCurs));
-//
-// using StringReader stringReader = new(xmlRes);
-// using XmlTextReader xmlReader = new(stringReader);
-//
-// var res = serializer.Deserialize(xmlReader) as ValCurs;
-//
-// Console.WriteLine(res?.ValType[0].Valute[0].Name);
-// Console.WriteLine(res?.ValType[0].Valute[0].Value);
+using System.Net;
+using System.Text;
+using System.Xml;
+using System.Xml.Serialization;
+using SerializationRepeat;
+
+WebClient client = new();
+string xmlRes = client.DownloadString("https://www.cbar.az/currencies/22.09.2023.xml");
+
+XmlSerializer serializer = new(typeof(ValCurs));
+
+using StringReader stringReader = new(xmlRes);
+using XmlTextReader xmlReader = new(stringReader);
+
+var res = serializer.Deserialize(xmlReader) as ValCurs;
+
+Console.WriteLine(res?.ValType[0].Valute[0].Name);
+Console.WriteLine(res?.ValType[0].Valute[0].Value);
 
 
 #endregion
@@ -138,33 +138,3 @@ Forecast? res = JsonSerializer.Deserialize<Forecast>(jsonRes);
 Console.WriteLine(res?.main.temp);
 */
 #endregion
-
-namespace Finalizer
-{
-    class Car
-    {
-        public string Make { get; set; }
-        public string Model { get; set; }
-
-        public Car()
-        {
-            Console.WriteLine("Car constructor");
-        }
-
-        ~Car()
-        {
-            Console.WriteLine("Car finalizer");
-        }
-    }
-
-    internal class Program
-    {
-        public static void Main(string[] args)
-        {
-            Car c1 = new Car();
-            GC.Collect();
-
-            Console.WriteLine("Done");
-        }
-    }
-}
