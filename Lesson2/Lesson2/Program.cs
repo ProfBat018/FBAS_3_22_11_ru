@@ -1,17 +1,24 @@
-﻿using System.Text;
+using Lesson2.Presenters;
+using Lesson2.Views;
 
-StringBuilder sb = new(5, 10);
-
-try
+namespace Lesson2
 {
-    sb.Append("Hello");
-    sb.Append(" ");
-    sb.Append("World");
+    public static class Program
+    {
+        public static MainForm MainView { get; set; } = new();
+        public static AddForm AddView { get; set; } = new();
+        public static EditForm EditView { get; set; } = new();
+
+        public static AddFormPresenter AddPresenter { get; set; } = new();
+        public static MainFormPresenter MainPresenter { get; set; } = new();
+        public static EditFormPresenter EditPresenter { get; set; } = new();
+
+
+        [STAThread]
+        static void Main()
+        {
+            ApplicationConfiguration.Initialize();
+            Application.Run(MainView);
+        }
+    }
 }
-catch (Exception ex)
-{
-    Console.WriteLine(ex.Message);
-}
-
-
-
