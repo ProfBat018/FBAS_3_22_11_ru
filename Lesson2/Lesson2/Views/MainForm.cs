@@ -18,6 +18,7 @@ namespace Lesson2.Views
         public MainForm()
         {
             InitializeComponent();
+            taskslistBox.DataSource = Tasks;
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -28,15 +29,5 @@ namespace Lesson2.Views
         {
             EditView.ShowItem(taskslistBox.SelectedItem as ToDoItem);
         }
-
-        public void UpdateListBox(List<ToDoItem> tasks)
-        {
-            taskslistBox.Items.Clear();
-
-            foreach (var task in tasks)
-            {
-                taskslistBox.Items.Add(task);
-            }
-        }   
     }
 }

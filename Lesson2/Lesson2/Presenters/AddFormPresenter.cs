@@ -11,8 +11,6 @@ using static Lesson2.Program;
 namespace Lesson2.Presenters;
 public class AddFormPresenter
 {
-    public TaskManagerService Service { get; set; } = new();
-
     public void AddItem(ToDoItem item)
     {
         var fileName = PictureBrowseService.BrowseForPicture();
@@ -23,9 +21,7 @@ public class AddFormPresenter
 
         AddView.UpdatePicture(item.ImagePath);
 
-        Service.Tasks.Add(item);
-
-        MainView.UpdateListBox(Service.Tasks);
+        Tasks.Add(item);
 
         AddView.Close();
     }
