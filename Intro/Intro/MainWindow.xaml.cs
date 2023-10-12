@@ -20,7 +20,6 @@ namespace Intro
         public MainWindow()
         {
             InitializeComponent();
-        
         }
 
         private void minimizeBtn_Click(object sender, RoutedEventArgs e)

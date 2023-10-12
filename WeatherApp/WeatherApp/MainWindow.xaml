@@ -1,0 +1,71 @@
+﻿<Window x:Class="WeatherApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeatherApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="600">
+
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="26"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="22"/>
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox Name="cityName" Grid.Row="0" Grid.Column="0"/>
+        <Button Click="searchBtn_Click" Name="searchBtn" Grid.Row="0" Grid.Column="1" Content="Search"/>
+
+        <Grid Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.7*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0">Temp</Label>
+            <Label Grid.Row="1">Feels Like</Label>
+            <Label Grid.Row="2">Wind Speed</Label>
+            <Label Grid.Row="3">Pressure</Label>
+            <Label Grid.Row="4">Sunrise</Label>
+            <Label Grid.Row="5">Sunset</Label>
+
+
+            <Label Name="tempLabel" Grid.Row="0" Grid.Column="1"/>
+            <Label Name="feelsLikeLabel" Grid.Row="1" Grid.Column="1"/>
+            <Label Name="windSpeedLabel" Grid.Row="2" Grid.Column="1"/>
+            <Label Name="pressureLabel" Grid.Row="3" Grid.Column="1"/>
+            <Label Name="sunriseLabel" Grid.Row="4" Grid.Column="1"/>
+            <Label Name="sunsetLabel" Grid.Row="5" Grid.Column="1"/>
+
+            <DockPanel Grid.Row="0" Grid.Column="2">
+                <Image Width="100" Name="weatherImg"/>
+                <Label Name="descriptionLabel"/>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</Window>
