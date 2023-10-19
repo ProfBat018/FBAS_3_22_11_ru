@@ -8,13 +8,15 @@
         Title="MainWindow" Height="500" Width="600">
 
     <Window.Resources>
-        <Style TargetType="Label">
-            <Setter Property="FontSize" Value="26"/>
-        </Style>
-        <Style TargetType="TextBox">
-            <Setter Property="FontSize" Value="22"/>
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary 
+                  Source="Styles.xaml">
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Window.Resources>
+
     
     <Grid>
         <Grid.RowDefinitions>
@@ -55,7 +57,7 @@
             <Label Grid.Row="5">Sunset</Label>
 
 
-            <Label Name="tempLabel" Grid.Row="0" Grid.Column="1"/>
+            <Label Style="{DynamicResource Normal}" Name="tempLabel" Grid.Row="0" Grid.Column="1"/>
             <Label Name="feelsLikeLabel" Grid.Row="1" Grid.Column="1"/>
             <Label Name="windSpeedLabel" Grid.Row="2" Grid.Column="1"/>
             <Label Name="pressureLabel" Grid.Row="3" Grid.Column="1"/>
