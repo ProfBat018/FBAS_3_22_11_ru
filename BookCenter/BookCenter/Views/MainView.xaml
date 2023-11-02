@@ -41,6 +41,6 @@
         </Grid>
 
         <ContentControl Grid.Row="1"
-                        Content="{Binding CurrentView}"/>
+                        Content="{Binding CurrentView, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </Window>

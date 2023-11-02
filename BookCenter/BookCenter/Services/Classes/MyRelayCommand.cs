@@ -24,6 +24,11 @@ namespace BookCenter.Services.Classes
         private readonly Action _action;
         private readonly Func<bool> _canExecute;
 
+        public MyRelayCommand(Action action)
+        {
+            _action = action;
+        }
+
         public MyRelayCommand(Action action, Func<bool> canExecute)
         {
             _action = action;

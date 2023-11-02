@@ -21,7 +21,7 @@ public class BookModel
     public Result[] Results { get; set; }
 }
 
-public class Result
+public class Result : IData
 {
     [JsonPropertyName("subcategories")]
     public string[] Subcategories { get; set; }

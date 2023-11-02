@@ -2,6 +2,7 @@
 using BookCenter.Services.Classes;
 using BookCenter.Services.Interfaces;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows;
@@ -10,16 +11,24 @@ namespace BookCenter.ViewModels
 {
     class SearchViewModel : ViewModelBase
     {
-        public ObservableCollection<Result> SearchResults { get => searchResults; set => Set(ref searchResults, value); }
+        private readonly IBookManagerService _managerService;
+        private readonly INavigationService _navigationService;
+        private readonly IDataService _dataService;
+
         private ObservableCollection<Result> searchResults;
+        
+        public ObservableCollection<Result> SearchResults { get => searchResults; set => Set(ref searchResults, value); }
 
         public string SearchQuery { get; set; }
 
-        private readonly IBookManagerService _managerService;
+        public Result SelectedItem { get; set; }
 
-        public SearchViewModel(IBookManagerService managerService)
+
+        public SearchViewModel(IBookManagerService managerService, INavigationService navigationService, IDataService dataService)
         {
             _managerService = managerService;
+            _navigationService = navigationService;
+            _dataService = dataService;
         }
 
         public MyRelayCommand SearchCommand
@@ -29,7 +38,7 @@ namespace BookCenter.ViewModels
         {
             try
             {
-                BookModel downloadedData = _managerService.GetBooks("Harry Potter");
+                BookModel downloadedData = _managerService.GetBooks(SearchQuery);
 
                 SearchResults = new(downloadedData.Results);
             }
@@ -42,6 +51,16 @@ namespace BookCenter.ViewModels
         {
             return !String.IsNullOrEmpty(SearchQuery) && SearchQuery.Length >= 3;
         });
+        }
+
+        public RelayCommand MoreInfoCommand
+        {
+            get => new(
+            () =>
+            {
+                _dataService.SendData(SelectedItem);
+                _navigationService.NavigateTo<InfoViewModel>();
+            });
         }
     }
 }

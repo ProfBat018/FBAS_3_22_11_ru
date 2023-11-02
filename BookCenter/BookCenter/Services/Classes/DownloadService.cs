@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Net.Http.Headers;
-using System.Threading.Tasks;
 using BookCenter.Services.Interfaces;
 using System.IO;
 
@@ -14,7 +9,7 @@ class DownloadService : IDownloadService
 {
     public string DownloadData(string title = "", int page = 1)
     {
-        var urlWithTitle = $"https://book-finder1.p.rapidapi.com/api/search?title={title}&series=Wings%20of%20fire&book_type=Fiction&lexile_min=600&lexile_max=800&results_per_page=10&page={page}";
+        var urlWithTitle = $"https://book-finder1.p.rapidapi.com/api/search?title={title}&lexile_min=600&lexile_max=800&results_per_page=10&page={page}";
         var urlWithoutTitle = $"https://book-finder1.p.rapidapi.com/api/search?series=Wings%20of%20fire&book_type=Fiction&lexile_min=600&lexile_max=800&results_per_page=10&page={page}";
 
 
