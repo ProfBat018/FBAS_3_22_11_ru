@@ -1,8 +1,10 @@
-﻿using BookCenter.Models;
+﻿using BookCenter.Messages;
+using BookCenter.Models;
 using BookCenter.Services.Classes;
 using BookCenter.Services.Interfaces;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows;
@@ -22,7 +24,6 @@ namespace BookCenter.ViewModels
         public string SearchQuery { get; set; }
 
         public Result SelectedItem { get; set; }
-
 
         public SearchViewModel(IBookManagerService managerService, INavigationService navigationService, IDataService dataService)
         {

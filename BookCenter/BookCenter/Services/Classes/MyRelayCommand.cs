@@ -7,19 +7,13 @@ using System.Windows.Input;
 
 namespace BookCenter.Services.Classes
 {
-    class MyRelayCommand : ICommand
+    class MyRelayCommand : ICommand 
     {
-        /*
-                RequerySuggested - привязывается к свойству и еогда он изменяется 
-                то вызывается CanExecuteChanged
-        */
-
         public event EventHandler? CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
         }
-
 
         private readonly Action _action;
         private readonly Func<bool> _canExecute;
