@@ -24,7 +24,7 @@ class MainViewModel : ViewModelBase
 
     public MainViewModel(INavigationService navigationService, IMessenger messenger)
     {
-        CurrentView = App.Container.GetInstance<SearchViewModel>();
+        CurrentView = App.Container.GetInstance<OrderViewModel>();
 
         _navigationService = navigationService;
         _messenger = messenger;

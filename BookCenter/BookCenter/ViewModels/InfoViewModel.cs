@@ -26,12 +26,25 @@ class InfoViewModel : ViewModelBase
             }
         });
     }
-        public RelayCommand GoBackCommand{ get => new(
-            () =>
-            {
-                _navigationService.NavigateTo<SearchViewModel>();
-            }
-        ); }
+    public RelayCommand GoBackCommand
+    {
+        get => new(
+        () =>
+        {
+            _navigationService.NavigateTo<SearchViewModel>();
+        }
+    );
+    }
+
+    public RelayCommand OrderCommand
+    {
+        get => new(
+        () =>
+        {
+            _navigationService.NavigateTo<OrderViewModel>();
+        }
+    );
+    }
 }
 
 

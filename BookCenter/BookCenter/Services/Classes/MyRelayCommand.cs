@@ -11,8 +11,8 @@ namespace BookCenter.Services.Classes
     {
         public event EventHandler? CanExecuteChanged
         {
-            add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; }
+            add { }
+            remove { }
         }
 
         private readonly Action _action;
@@ -21,6 +21,7 @@ namespace BookCenter.Services.Classes
         public MyRelayCommand(Action action)
         {
             _action = action;
+            _canExecute = () => true;
         }
 
         public MyRelayCommand(Action action, Func<bool> canExecute)
