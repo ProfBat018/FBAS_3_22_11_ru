@@ -5,7 +5,9 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adapter", "Adapter\Adapter.csproj", "{00E6BB4A-9058-4DA5-A84D-275A5DB413F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proxy", "Proxy\Proxy.csproj", "{7E198A74-A1F3-41CE-96B3-2EE3F807A547}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proxy", "Proxy\Proxy.csproj", "{7E198A74-A1F3-41CE-96B3-2EE3F807A547}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bridge", "Bridge\Bridge.csproj", "{05CE70D9-2DAD-4556-9589-59D0D7E75367}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7E198A74-A1F3-41CE-96B3-2EE3F807A547}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E198A74-A1F3-41CE-96B3-2EE3F807A547}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E198A74-A1F3-41CE-96B3-2EE3F807A547}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05CE70D9-2DAD-4556-9589-59D0D7E75367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05CE70D9-2DAD-4556-9589-59D0D7E75367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05CE70D9-2DAD-4556-9589-59D0D7E75367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05CE70D9-2DAD-4556-9589-59D0D7E75367}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
