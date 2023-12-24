@@ -181,3 +181,11 @@ where P.Age >= 18
 group by G.Name, FacultyId
 having FacultyId = 1
 
+
+
+select * from Students
+cross join Teachers
+
+
+
+

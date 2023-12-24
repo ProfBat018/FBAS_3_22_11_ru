@@ -23,3 +23,30 @@
 
 
 
+## self join
+
+Self join - это когда мы объединяем таблицу саму с собой.
+
+Например, у нас есть таблица с сотрудниками, и мы хотим
+получить список всех сотрудников, которые работают в одном
+отделе с сотрудником с id = 1.
+
+```sql
+select e1.name, e2.name
+from employees as e1
+join employees as e2 on e1.department_id = e2.department_id
+where e2.id = 1
+```
+
+## cross join
+
+Cross join - это когда мы объединяем каждую строку одной таблицы
+с каждой строкой другой таблицы.
+
+Например, у нас есть таблица сотрудников и таблица отделов,
+и мы хотим получить список всех сотрудников и отделов.
+
+```sql
+select e.name, d.name
+from employees e
+cross join departments d
