@@ -11,6 +11,7 @@ CMakeLists.txt
 .exe
 .obj
 
+appsettings.json
 
 # User-specific files
 *.rsuser
