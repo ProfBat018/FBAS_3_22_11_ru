@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirst", "CodeFirst\CodeFirst.csproj", "{A86618B5-3278-4A18-8882-1D344E4F231E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFancyFarmDataLayer", "MyFancyFarmDataLayer\MyFancyFarmDataLayer.csproj", "{C79E71D0-3F9D-4B33-9BF9-376161F4B39A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FancyFarmMain", "FancyFarmMain\FancyFarmMain.csproj", "{609CC4E3-F9D1-4051-AC05-C29B1405E305}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A86618B5-3278-4A18-8882-1D344E4F231E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A86618B5-3278-4A18-8882-1D344E4F231E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A86618B5-3278-4A18-8882-1D344E4F231E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A86618B5-3278-4A18-8882-1D344E4F231E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C79E71D0-3F9D-4B33-9BF9-376161F4B39A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C79E71D0-3F9D-4B33-9BF9-376161F4B39A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C79E71D0-3F9D-4B33-9BF9-376161F4B39A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C79E71D0-3F9D-4B33-9BF9-376161F4B39A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{609CC4E3-F9D1-4051-AC05-C29B1405E305}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{609CC4E3-F9D1-4051-AC05-C29B1405E305}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{609CC4E3-F9D1-4051-AC05-C29B1405E305}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{609CC4E3-F9D1-4051-AC05-C29B1405E305}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
