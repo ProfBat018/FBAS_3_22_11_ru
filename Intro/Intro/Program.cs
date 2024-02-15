@@ -1,36 +1,75 @@
-﻿using System.Data.SqlClient;
-using Microsoft.Extensions.Configuration;
+﻿using System.Diagnostics;
 
-// тот самый паттерн builder
-var builder = new ConfigurationBuilder();
+#region Part1
 
-builder.AddJsonFile("appsettings.json");
+// class Program
+// {
+//     public static void Test()
+//     {
+//         
+//         ThreadStart action1 = () =>
+//         {
+//             Console.WriteLine("I created this action and this Thread");
+//             Console.WriteLine($"My working thread in function Test is: {Thread.CurrentThread.ManagedThreadId}");
+//         };
+//
+//         Thread th1 = new(action1);
+//
+//         th1.Start();
+//
+//     }
+//     public static void Main()
+//     {
+//         Console.WriteLine("Main Thread");
+//         Console.WriteLine($"My working thread is: {Thread.CurrentThread.ManagedThreadId}");
+//         Test();
+//         Console.WriteLine($"My working thread is: {Thread.CurrentThread.ManagedThreadId}");
+//     }
+// }
 
-var config = builder.Build();
 
-var connectionString = config.GetConnectionString("Default");
+// var allThreads = Process.GetCurrentProcess().Threads;
+//
+//
+// foreach (ProcessThread item in allThreads)
+// {
+//     Console.WriteLine($"{item.Id} {item.ThreadState}");
+// }
 
-using SqlConnection conn = new(connectionString);
+#endregion
 
-SqlCommand command = new("select * from People", conn);
 
-conn.Open();
+#region Part2
 
+class Program
 {
-    using SqlDataReader reader = command.ExecuteReader(); // ExecuteReader - это метод,
-    // который использутеся для чтения
-    // из таблицы, то есть select 
+        public static void Func1()
+        {
+            Console.WriteLine("Aloha");
+            Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
+        }
 
-    while (reader.Read())
+        public static void Func2(int a)
+        {
+            Console.WriteLine($"Aloha: {a}");
+            Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
+
+        }
+    public static void Main(string[] args)
     {
-        var id = reader.GetInt32(0);
-        Console.WriteLine($"{reader[0]}\t{reader[1]}");
+        Thread th1 = new(new ThreadStart(() =>
+        {
+            Func1();
+        }));
+        
+        Thread th2 = new(new ParameterizedThreadStart((a) =>
+        {
+            Func2((int)a);
+        }));
+        
+        th1.Start();
+        th2.Start(5);
     }
 }
 
-command = new SqlCommand("insert into People(Name, Surname, Age) values(N'Baxa', N'Mirzayev', 17);", conn);
-
-var res = command.ExecuteNonQuery();
-
-Console.WriteLine(res);
-
+#endregion
