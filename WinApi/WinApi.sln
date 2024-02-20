@@ -1,6 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinApi", "WinApi\WinApi.csproj", "{D53D137F-F0CF-48E1-95A6-4384F64C34B5}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureWinApi", "CaptureWinApi\CaptureWinApi.csproj", "{646996A4-75F2-44B0-A756-13926B2A824E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenCapture", "ScreenCapture\ScreenCapture.csproj", "{E237FC39-F79B-4372-8C33-249F09A640B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D53D137F-F0CF-48E1-95A6-4384F64C34B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D53D137F-F0CF-48E1-95A6-4384F64C34B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D53D137F-F0CF-48E1-95A6-4384F64C34B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D53D137F-F0CF-48E1-95A6-4384F64C34B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{646996A4-75F2-44B0-A756-13926B2A824E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{646996A4-75F2-44B0-A756-13926B2A824E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{646996A4-75F2-44B0-A756-13926B2A824E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{646996A4-75F2-44B0-A756-13926B2A824E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E237FC39-F79B-4372-8C33-249F09A640B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E237FC39-F79B-4372-8C33-249F09A640B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E237FC39-F79B-4372-8C33-249F09A640B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E237FC39-F79B-4372-8C33-249F09A640B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5F20F61-606B-4EC3-BFEF-730C923CA14A}
 	EndGlobalSection
 EndGlobal
