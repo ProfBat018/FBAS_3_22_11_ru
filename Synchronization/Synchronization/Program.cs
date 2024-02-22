@@ -27,7 +27,7 @@ class Program
 #endregion
 
 #region WithMutex
-
+/*
 class Program
 {
     public static void CountToTen()
@@ -51,6 +51,37 @@ class Program
             Console.WriteLine("Creating thread");
             Thread th = new(CountToTen);
             Console.WriteLine("Starting thread");
+            th.Start();
+        }
+    }
+}
+*/
+#endregion
+
+#region Semaphore
+
+class Program
+{
+    public static void CountToTen()
+    {
+        var semaphore = new Semaphore(2, 5);
+        semaphore.WaitOne();
+        
+        Console.WriteLine($"Created thread: {Thread.CurrentThread.ManagedThreadId}");
+
+        for (int i = 0; i < 15; i++)
+        {
+            Console.WriteLine($"This is {i} from thread {Thread.CurrentThread.ManagedThreadId}");
+         
+        }
+        semaphore.Release();
+    }
+
+    public static void Main(string[] args)
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            Thread th = new(CountToTen);
             th.Start();
         }
     }

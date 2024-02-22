@@ -14,7 +14,7 @@ namespace CaptureWinApi
         [DllImport("user32.dll")]
         private static extern IntPtr GetForegroundWindow();
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
+        [DllImport("user32.dll")]
         public static extern IntPtr GetDesktopWindow();
 
         [StructLayout(LayoutKind.Sequential)]
@@ -34,7 +34,7 @@ namespace CaptureWinApi
             return CaptureWindow(GetDesktopWindow());
         }
 
-        public static Bitmap CaptureActiveWindow()
+        public static System.Drawing.Image CaptureActiveWindow()
         {
             return CaptureWindow(GetForegroundWindow());
         }

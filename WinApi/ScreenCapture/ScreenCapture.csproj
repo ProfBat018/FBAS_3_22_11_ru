@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CaptureWinApi\CaptureWinApi.csproj" />
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj" />
   </ItemGroup>
 
 </Project>
