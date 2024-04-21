@@ -1,0 +1,66 @@
+@import "global-style";
+
+.calculator {
+    padding: 100px;
+    width: 45%;
+
+
+    .calc-form {
+        font-size: 24px;
+        font-family: "Product Sans";
+        display: flex;
+        flex-direction: column;
+
+        select {
+            border-color: $logo-light-green;
+            border-radius: 5px;
+
+
+            width: 50%;
+        }
+
+        .form-row-1 {
+
+            .car-type {
+                padding-top: 10px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .engine-type {
+                padding-top: 10px;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .form-row-2 {
+            display: flex;
+
+            .form-col-1 {
+                display: flex;
+                flex-direction: column;
+
+                div {
+                    padding-top: 10px;
+                }
+            }
+
+            .form-col-2 {
+                display: flex;
+                flex-direction: column;
+
+                div {
+                    padding-top: 10px;
+                }
+            }
+        }
+
+        .form-row-3 {
+            padding-top: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+    }
+}

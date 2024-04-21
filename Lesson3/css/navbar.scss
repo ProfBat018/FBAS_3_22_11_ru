@@ -1,0 +1,50 @@
+@import "global-style";
+
+header {
+    height: 75px;
+    width: 100%;
+
+    .navbar {
+        height: 100%;
+        @include flex();
+
+        .nav-logo {
+            position: relative;
+            display: inline-block;
+            height: 100%;
+            width: 15%;
+
+            svg {
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 5px;
+            }
+        }
+
+        .nav-items {
+            height: 100%;
+            width: 75%;
+            @include reset-list();
+            @include flex(center, space-between);
+
+            .nav-item {
+                width: 20%;
+                @include flex(center, center);
+                height: 100%;
+            }
+
+            a {
+                @include flex(center);
+                height: 100%;
+                color: black;
+                font-family: 'Product Sans Bold';
+                text-decoration: none;
+            }
+        }
+
+        .nav-auth {
+            width: 10%;
+        }
+    }
+}
