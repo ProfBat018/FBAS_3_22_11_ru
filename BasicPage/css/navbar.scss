@@ -1,6 +1,10 @@
 @import "global-style";
 
 .navbar {
+    z-index: 2;
+    background-color: white;
+    position: fixed;
+    width: 100%;
     height: 75px;
     @include flex(space-between, flex-start);
 

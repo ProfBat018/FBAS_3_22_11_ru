@@ -1,0 +1,1 @@
+body{height:100%}.container{display:flex;background-color:black;height:2000px;width:100%;position:relative}.container .first{width:150px;height:1000px;background-color:red}.container .first h1{position:fixed}.container .second{width:150px;height:1000px;background-color:green}.container .second h1{top:0px;position:sticky}
