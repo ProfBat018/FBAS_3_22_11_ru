@@ -1,0 +1,17 @@
+﻿@using AspRolesRazor.Areas.Identity.Data
+
+@{
+    if (!User.Identity.IsAuthenticated)
+    {
+        Layout = "_Layout";
+    }
+    else if (User.IsInRole(AppRoles.AppUser))
+    {
+        Layout = "_UserLayout";
+    }
+    else if (User.IsInRole(AppRoles.AppAdmin))
+    {
+        Layout = "_AdminLayout";
+    }
+}
+
