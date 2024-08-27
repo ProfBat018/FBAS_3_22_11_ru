@@ -1,17 +1,19 @@
-﻿@using AspRolesRazor.Areas.Identity.Data
+﻿@using AspRolesRazor.Areas.Identity.Data.Models
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<AppUser> userManager;
+
 
 @{
     if (!User.Identity.IsAuthenticated)
     {
-        Layout = "_Layout";
+        Layout = "Shared/_Layout";
     }
     else if (User.IsInRole(AppRoles.AppUser))
     {
-        Layout = "_UserLayout";
+        Layout = "Shared/_UserLayout";
     }
-    else if (User.IsInRole(AppRoles.AppAdmin))
+    else if (User.IsInRole(AppRoles.AdminUser))
     {
-        Layout = "_AdminLayout";
+        Layout = "Shared/_AdminLayout";
     }
 }
-

@@ -6,9 +6,10 @@ using System;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using AspRolesRazor.Areas.Data.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using AspRolesRazor.Areas.Identity.Data;
-using AspRolesRazor.Areas.Identity.Data.DTOs;
+using AspRolesRazor.Areas.Identity.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -29,10 +30,12 @@ namespace AspRolesRazor.Areas.Identity.Pages.Account
             _emailSender = emailSender;
         }
 
-        [BindProperty]
-        public ResendEmailConfirmationDTO Input { get; set; }
 
-       
+        [BindProperty]
+        public ResendConfirmationDTO Input { get; set; }
+
+
+
         public void OnGet()
         {
         }

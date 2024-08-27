@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using AspRolesRazor.Areas.Identity.Data;
+using AspRolesRazor.Areas.Identity.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -25,7 +26,6 @@ namespace AspRolesRazor.Areas.Identity.Pages.Account
             _signInManager = signInManager;
         }
 
-       
         [TempData]
         public string StatusMessage { get; set; }
 
@@ -50,7 +50,6 @@ namespace AspRolesRazor.Areas.Identity.Pages.Account
                 return Page();
             }
 
-           
             var setUserNameResult = await _userManager.SetUserNameAsync(user, email);
             if (!setUserNameResult.Succeeded)
             {

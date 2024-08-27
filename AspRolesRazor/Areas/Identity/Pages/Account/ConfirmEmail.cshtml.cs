@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using AspRolesRazor.Areas.Identity.Data;
+using AspRolesRazor.Areas.Identity.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -24,7 +25,7 @@ namespace AspRolesRazor.Areas.Identity.Pages.Account
             _userManager = userManager;
         }
 
-
+      
         [TempData]
         public string StatusMessage { get; set; }
         public async Task<IActionResult> OnGetAsync(string userId, string code)

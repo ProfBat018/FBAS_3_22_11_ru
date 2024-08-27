@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using AspRolesRazor.Areas.Identity.Data;
+using AspRolesRazor.Areas.Identity.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -27,9 +28,10 @@ namespace AspRolesRazor.Areas.Identity.Pages.Account
             _sender = sender;
         }
 
-     
+    
         public string Email { get; set; }
 
+ 
         public bool DisplayConfirmAccountLink { get; set; }
 
         public string EmailConfirmationUrl { get; set; }

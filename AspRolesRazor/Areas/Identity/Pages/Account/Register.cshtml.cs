@@ -1,6 +1,5 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
-
 #nullable disable
 
 using System;
@@ -13,11 +12,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using AspRolesRazor.Areas.Identity.Data;
-using AspRolesRazor.Areas.Identity.Data.DTOs;
+using AspRolesRazor.Areas.Identity.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
@@ -50,14 +48,18 @@ namespace AspRolesRazor.Areas.Identity.Pages.Account
             _roleManager = roleManager;
         }
 
+     
+        [BindProperty]
+        public RegisterDTO Input { get; set; }
 
-        [BindProperty] public RegisterDTO Input { get; set; }
-
-
+     
         public string ReturnUrl { get; set; }
 
-
+    
         public IList<AuthenticationScheme> ExternalLogins { get; set; }
+
+        
+
 
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -80,16 +82,16 @@ namespace AspRolesRazor.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
-                    foreach (var fieldInfo in typeof(AppRoles).GetFields())
+                    foreach (var field in typeof(AppRoles).GetFields())
                     {
-                        if (!await _roleManager.RoleExistsAsync(fieldInfo.Name))
+                        if (!await _roleManager.RoleExistsAsync(field.Name))
                         {
-                            await _roleManager.CreateAsync(new IdentityRole() {Name = fieldInfo.Name});
+                           await  _roleManager.CreateAsync(new IdentityRole() { Name = field.Name });
                         }
                     }
 
+                    await _userManager.AddToRoleAsync(user, AppRoles.AppUser);
 
-                    _userManager.AddToRoleAsync(user, AppRoles.AppUser);
                     _logger.LogInformation("User created a new account with password.");
 
                     var userId = await _userManager.GetUserIdAsync(user);
@@ -106,8 +108,7 @@ namespace AspRolesRazor.Areas.Identity.Pages.Account
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
-                        return RedirectToPage("RegisterConfirmation",
-                            new { email = Input.Email, returnUrl = returnUrl });
+                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
                     }
                     else
                     {
@@ -115,13 +116,12 @@ namespace AspRolesRazor.Areas.Identity.Pages.Account
                         return LocalRedirect(returnUrl);
                     }
                 }
-
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
             }
-
+            
             return Page();
         }
 
@@ -134,8 +134,8 @@ namespace AspRolesRazor.Areas.Identity.Pages.Account
             catch
             {
                 throw new InvalidOperationException($"Can't create an instance of '{nameof(AppUser)}'. " +
-                                                    $"Ensure that '{nameof(AppUser)}' is not an abstract class and has a parameterless constructor, or alternatively " +
-                                                    $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
+                    $"Ensure that '{nameof(AppUser)}' is not an abstract class and has a parameterless constructor, or alternatively " +
+                    $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
             }
         }
 
@@ -145,7 +145,6 @@ namespace AspRolesRazor.Areas.Identity.Pages.Account
             {
                 throw new NotSupportedException("The default UI requires a user store with email support.");
             }
-
             return (IUserEmailStore<AppUser>)_userStore;
         }
     }

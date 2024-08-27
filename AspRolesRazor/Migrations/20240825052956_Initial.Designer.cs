@@ -11,9 +11,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AspRolesRazor.Migrations
 {
-    [DbContext(typeof(UserContext))]
-    [Migration("20240825085905_Initizl")]
-    partial class Initizl
+    [DbContext(typeof(UsersContext))]
+    [Migration("20240825052956_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

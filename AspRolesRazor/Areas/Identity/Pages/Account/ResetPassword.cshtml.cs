@@ -5,9 +5,10 @@
 using System;
 using System.Text;
 using System.Threading.Tasks;
+using AspRolesRazor.Areas.Data.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using AspRolesRazor.Areas.Identity.Data;
-using AspRolesRazor.Areas.Identity.Data.DTOs;
+using AspRolesRazor.Areas.Identity.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -23,11 +24,13 @@ namespace AspRolesRazor.Areas.Identity.Pages.Account
         {
             _userManager = userManager;
         }
+
+  
         [BindProperty]
         public ResetPasswordDTO Input { get; set; }
 
-      
-
+   
+       
         public IActionResult OnGet(string code = null)
         {
             if (code == null)
@@ -36,7 +39,7 @@ namespace AspRolesRazor.Areas.Identity.Pages.Account
             }
             else
             {
-                Input = new ResetPasswordDTO
+                Input = new ResetPasswordDTO()
                 {
                     Code = Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(code))
                 };
@@ -54,6 +57,7 @@ namespace AspRolesRazor.Areas.Identity.Pages.Account
             var user = await _userManager.FindByEmailAsync(Input.Email);
             if (user == null)
             {
+           
                 return RedirectToPage("./ResetPasswordConfirmation");
             }
 

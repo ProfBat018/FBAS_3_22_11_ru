@@ -1,13 +1,14 @@
 using AspRolesRazor.Areas.Identity.Data;
+using AspRolesRazor.Areas.Identity.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace AspRolesRazor.Data;
 
-public class UserContext : IdentityDbContext<AppUser>
+public class UsersContext : IdentityDbContext<AppUser>
 {
-    public UserContext(DbContextOptions<UserContext> options)
+    public UsersContext(DbContextOptions<UsersContext> options)
         : base(options)
     {
     }

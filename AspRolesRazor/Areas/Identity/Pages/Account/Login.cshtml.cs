@@ -6,9 +6,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AspRolesRazor.Areas.Data.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using AspRolesRazor.Areas.Identity.Data;
-using AspRolesRazor.Areas.Identity.Data.DTOs;
+using AspRolesRazor.Areas.Identity.Data.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -20,25 +21,26 @@ namespace AspRolesRazor.Areas.Identity.Pages.Account
 {
     public class LoginModel : PageModel
     {
+        private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
 
-        public LoginModel(SignInManager<AppUser> signInManager, ILogger<LoginModel> logger)
+        public LoginModel(SignInManager<AppUser> signInManager, ILogger<LoginModel> logger, UserManager<AppUser> userManager)
         {
             _signInManager = signInManager;
             _logger = logger;
+            _userManager = userManager;
         }
+        
         [BindProperty]
         public LoginDTO Input { get; set; }
-
         public IList<AuthenticationScheme> ExternalLogins { get; set; }
-
         public string ReturnUrl { get; set; }
-
+        
         [TempData]
         public string ErrorMessage { get; set; }
 
-       
+     
 
         public async Task OnGetAsync(string returnUrl = null)
         {
@@ -49,6 +51,7 @@ namespace AspRolesRazor.Areas.Identity.Pages.Account
 
             returnUrl ??= Url.Content("~/");
 
+         
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
@@ -65,6 +68,7 @@ namespace AspRolesRazor.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+                
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
@@ -85,7 +89,7 @@ namespace AspRolesRazor.Areas.Identity.Pages.Account
                     return Page();
                 }
             }
-
+            
             return Page();
         }
     }
