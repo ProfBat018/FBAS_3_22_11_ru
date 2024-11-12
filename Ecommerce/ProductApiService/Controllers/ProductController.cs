@@ -15,10 +15,20 @@ public class ProductController : ControllerBase
         _unitOfWork = unitOfWork;
     }
 
-    [HttpGet("GetAllProducts")]
-    public async Task<IActionResult> GetAllProducts([FromQuery] int page, [FromQuery] int pagesize)
+    [HttpGet("Products/{page}/{pagesize}")]
+    
+    public async Task<IActionResult> GetAllPaginatedProducts(int page, int pagesize)
     {
         PaginatedList<Product> products = await _unitOfWork.ProductRepository.GetAllAsync(page, pagesize);
+
+        return Ok(products);
+    }
+    
+    [HttpGet("Products/All")]
+    
+    public async Task<IActionResult> GetAllProducts()
+    {
+        List<Product> products = await _unitOfWork.ProductRepository.GetAllAsync() as List<Product>;
 
         return Ok(products);
     }
