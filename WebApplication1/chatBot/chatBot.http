@@ -1,6 +1,0 @@
-@chatBot_HostAddress = http://localhost:5162
-
-GET {{chatBot_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
